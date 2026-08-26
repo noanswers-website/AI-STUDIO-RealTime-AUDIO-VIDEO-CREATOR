@@ -1,0 +1,1018 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=yes">
+    <meta http-equiv="x-ua-compatible" content="ie=edge11">
+    <meta name="description"
+        content="IE AFFILIATE PROGRAMS front most initiative of IE Business Groups courtesy GoogleMyBusiness; Market Contention Workshop, free website blog; with brand imaging of the latest affiliate published events; via copyright designs and graphical coding; alongside without restricting user rights; on self-based secured console. Documented exclusively with structured and tested resources available on connected proxy links.">
+    <title>CLASSROOM STUDIO —— IMAGE TO VIDEO</title>
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="icon" href="https://res.cloudinary.com/bell-company/image/upload/v1601944457/favicon.ico" sizes="32x32" type="image/png">
+    <link rel="stylesheet" rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prata">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+sans-serif:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --glass-bg: rgba(255,255,255,0.06);
+      --glass-border: rgba(255,255,255,0.14);
+      --neon: #00f0f0;
+      --canvas-w: 960px;
+      --canvas-h: 540px;
+    }
+    html, body {
+      margin: 0; padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: radial-gradient(circle at center, #071021, #02030a 75%);
+      color: #e6eef8;
+      font-family: "Segoe UI", sans-serif;
+    }
+    canvas#bgParticles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .glass-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      backdrop-filter: blur(12px) saturate(120%);
+      box-shadow: 0 8px 30px rgba(0,240,240,0.04);
+    }
+    .neon-edge {
+      box-shadow: 0 0 18px rgba(0,240,240,0.08), inset 0 0 40px rgba(0,240,240,0.02);
+      border: 1px solid rgba(0,240,240,0.12);
+    }
+    .thumb {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .control-label { font-size: 0.9rem; color: #cfe0ff; }
+    .muted { color: #a8b3c7; }
+    .btn-neon {
+      border: 1px solid var(--neon);
+      color: var(--neon);
+      background: linear-gradient(90deg, rgba(0,240,240,0.04), rgba(0,240,240,0.01));
+    }
+    .btn-neon:hover { background: var(--neon); color: #001; }
+    .canvas-wrap {
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.25));
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 120px;
+    }
+    #previewCanvas {
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0,240,240,0.06);
+      background: #000;
+    }
+    .progress-sm { height: 10px; }
+
+    @media(max-width:900px) {
+      :root { --canvas-w:720px; --canvas-h:405px; }
+    }
+
+    /* small helpers */
+    .thumb-list { max-height: 360px; overflow:auto; }
+    .thumb-row { gap: 0.8rem; display:flex; align-items:center; justify-content:space-between; padding:8px 6px; border-radius:8px; }
+    .thumb-meta { min-width: 130px; }
+    .small-muted { font-size:0.82rem; color: #9fb7d6; }
+  </style>
+</head>
+<body>
+  <canvas id="bgParticles"></canvas>
+
+  <div class="container py-4 position-relative" style="z-index:1">
+    <h2 class="text-center mb-4">🎬 AI STUDIO — RealTime AUDIO &amp; VIDEO CREATOR</h2>
+
+    <div class="row g-4">
+      <!-- Left Panel: AI Generator + Upload -->
+      <div class="col-lg-4">
+        <div class="glass-card p-3 mb-4 neon-edge">
+          <h5 class="mb-2">🧠 AI IMAGE &AMP; VIDEO CREATOR</h5>
+          <div class="mb-2 control-label">ADD PROMPT HERE</div>
+          <textarea id="aiPrompt" class="form-control mb-2" rows="2" placeholder="e.g. Futuristic classroom with sharp lighting"></textarea>
+          <!-- AI Style Selection -->
+          <select id="aiStyle" class="form-select form-select-sm mb-2">
+            <option value="">None</option>
+          </select>
+          
+          <!-- AI Prompt Input -->
+          <button id="genAI" class="btn btn-neon w-100 mb-2">Create an Image</button>
+          <div id="aiStatus" class="muted small text-center">Tip: short descriptive prompts work the best.</div>
+        </div>
+
+        <div class="glass-card p-3 mb-4">
+          <div class="mb-2 control-label">Add Images</div>
+          <div id="dropArea" class="p-3 text-center border border-secondary rounded mb-2" style="cursor:pointer; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);">
+            DRAG/DROP images or CLICK to upload
+            <input id="fileInput" type="file" accept="image/*" multiple style="display:none">
+          </div>
+          <div id="thumbList" class="thumb-list"></div>
+        </div>
+
+        <div class="glass-card p-3 neon-edge">
+          <div class="mb-2 control-label">Slide Duration (s)</div>
+          <input id="defaultDuration" type="number" class="form-control mb-2" value="2.5" min="0.1" step="0.1">
+          <div class="row g-2 mb-2">
+            <div class="col">
+              <label class="control-label">FPS</label>
+              <input id="fps" type="number" class="form-control" value="30" min="10" max="60">
+            </div>
+            <div class="col">
+              <label class="control-label">Transition</label>
+              <select id="transition" class="form-select">
+                <option value="fade" selected>Fade</option>
+                <option value="slide">Slide</option>
+                <option value="zoom">Zoom</option>
+                <option value="rotate">Rotate</option>
+                <option value="blur">Blur</option>
+                <option value="flash">Flash</option>
+                <option value="glitch">Glitch</option>
+                <option value="pan">Pan</option>
+                <option value="none">None</option>
+              </select>
+            </div>
+          </div>
+          <button id="previewBtn" class="btn btn-outline-light w-100 mb-2">Preview</button>
+          <button id="exportBtn" class="btn btn-primary w-100">Download Video</button>
+          <div id="exportStatus" class="small muted mt-2"></div>
+          <div id="exportProgressWrap" style="display:none" class="mt-2">
+            <div class="progress progress-sm">
+              <div id="exportProgress" class="progress-bar" style="width:0%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Panel: Canvas Preview -->
+      <div class="col-lg-8">
+        <div class="glass-card p-3 neon-edge">
+          <div class="d-flex justify-content-between mb-2">
+            <strong>Preview</strong>
+            <span class="muted small">Resolution: <span id="canvasRes">960×620</span></span>
+          </div>
+          <div class="canvas-wrap">
+            <canvas id="previewCanvas" width="960" height="720"></canvas>
+          </div>
+          <div class="muted small mt-2">Auto-letterboxed to largest detected frame size. Real-time transitions applied on canvas.</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center muted small mt-4"><div id="aiStatus" class="small text-muted"></div>
+    </div>  
+    <footer class="text-center muted small mt-4">IE.AI IMAGING STUDIO ©2025</footer>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Particle background script -->
+  <script>
+  (function(){
+    const bgCanvas = document.getElementById('bgParticles');
+    const bctx = bgCanvas.getContext('2d');
+    let bw = bgCanvas.width = window.innerWidth;
+    let bh = bgCanvas.height = window.innerHeight;
+    window.addEventListener('resize', ()=>{ bw = bgCanvas.width = window.innerWidth; bh = bgCanvas.height = window.innerHeight; initParticles(); });
+
+    let particles = [];
+    function initParticles(){
+      particles = [];
+      for(let i=0;i<110;i++){
+        particles.push({
+          x: Math.random()*bw - bw/2,
+          y: Math.random()*bh - bh/2,
+          z: Math.random()*bw + 20,
+          r: Math.random()*1.8 + 0.5,
+          hue: Math.random()*360
+        });
+      }
+    }
+    initParticles();
+
+    function draw(){
+      bctx.clearRect(0,0,bw,bh);
+      bctx.fillStyle = 'rgba(4,8,14,0.65)';
+      bctx.fillRect(0,0,bw,bh);
+      for(const p of particles){
+        p.z -= 1.6;
+        if(p.z < 1){ p.z = bw + Math.random()*200; p.x = Math.random()*bw - bw/2; p.y = Math.random()*bh - bh/2; }
+        const k = 300 / (p.z + 50);
+        const px = p.x*k + bw/2;
+        const py = p.y*k + bh/2;
+        const size = Math.max(0.2, p.r * k * 0.6);
+        bctx.beginPath();
+        bctx.fillStyle = `hsla(${p.hue}, 70%, 60%, ${Math.max(0.02, 0.9 - p.z/bw)})`;
+        bctx.arc(px, py, size, 0, Math.PI*2);
+        bctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+  </script>
+
+  <!-- Main application script -->
+  <script>
+  (function(){
+    // ---- State & DOM ----
+    const state = {
+      slides: [], // {id, fileName, imgEl, duration, w, h}
+      defaultDuration: 2.5,
+      fps: 30,
+      transition: 'fade'
+    };
+
+    const dropArea = document.getElementById('dropArea');
+    const fileInput = document.getElementById('fileInput');
+    const thumbList = document.getElementById('thumbList');
+    const previewCanvas = document.getElementById('previewCanvas');
+    const ctx = previewCanvas.getContext('2d', {alpha:false});
+    const defaultDurationInput = document.getElementById('defaultDuration');
+    const fpsInput = document.getElementById('fps');
+    const transitionSelect = document.getElementById('transition');
+    const previewBtn = document.getElementById('previewBtn');
+    const exportBtn = document.getElementById('exportBtn');
+    const exportStatus = document.getElementById('exportStatus');
+    const exportProgressWrap = document.getElementById('exportProgressWrap');
+    const exportProgress = document.getElementById('exportProgress');
+    const canvasRes = document.getElementById('canvasRes');
+    const genAI = document.getElementById('genAI');
+    const aiPrompt = document.getElementById('aiPrompt');
+    const aiStyle = document.getElementById('aiStyle');
+    // Populate AI style select dynamically
+    const aiStyleSelect = document.getElementById('aiStyle');
+    const styleOptions = [
+  "Realistic", "Digital art", "Anime", "Cyberpunk", "Fantasy",
+  "Sci-fi", "Steampunk", "Cartoon", "Pixel art", "Minimalist",
+  "Abstract", "Surreal", "Watercolor", "Oil painting", "Impressionist",
+  "Modern", "Vintage", "Retro", "Pop art", "Low poly",
+  "Concept art", "3D render", "Matte painting", "Photo realistic", "Epic",
+  "Fantasy landscape", "Futuristic city", "Dark fantasy", "Bright", "Moody",
+  "Cinematic", "Ultra-detailed", "Sketch", "Line art", "Monochrome",
+  "Vaporwave", "Cyberdelic", "Anime style", "Chibi", "Ghibli",
+  "Character design", "Illustration", "Comic", "Graphic novel", "Studio lighting",
+  "Neon lights", "High contrast", "Soft light", "Epic composition", "Macro",
+  "Minimal", "Cartoonish", "Painterly", "Stylized", "Realistic portrait",
+  "Fantasy character", "Sci-fi armor", "Mecha", "Magic", "Robot",
+  "Alien world", "Fantasy castle", "Ocean scene", "Desert scene", "Mountain scene",
+  "Night sky", "Aurora", "Foggy", "Rainy", "Snowy",
+  "Sunset", "Sunrise", "Stormy", "Action scene", "Dynamic pose",
+  "Fashion illustration", "Photography style", "Cinematic lighting", "Epic scale", "High detail",
+  "HDR", "Soft focus", "Film grain", "Tilt-shift", "Drone view",
+  "Top-down", "Isometric", "Low-key lighting", "High-key lighting", "Backlight",
+  "Silhouette", "Glow effect", "Bokeh", "Macro shot", "Wide-angle",
+  "Long exposure", "Tilted perspective", "Motion blur", "Fantasy armor", "Dragon",
+  "Mythical creature", "Spaceship", "Alien", "Wizard", "Sorcerer",
+  "Steampunk city", "Cyberpunk alley", "Medieval village", "Futuristic vehicle", "Ancient ruins",
+  "Underwater scene", "Space station", "Post-apocalyptic", "Time travel", "Dreamscape",
+  "Surreal portrait", "Fantasy beast", "Cybernetic organism", "Alien landscape", "Virtual reality",
+  "Augmented reality", "Holographic", "Neon city", "Retro-futuristic", "Art deco",
+  "Gothic", "Baroque", "Renaissance", "Victorian", "Edwardian",
+  "Art Nouveau", "Constructivism", "Dadaism", "Cubism", "Fauvism",
+  "Expressionism", "Realism", "Photorealism", "Hyperrealism", "Conceptual art",
+  "Installation art", "Performance art", "Street art", "Graffiti", "Mural",
+  "Tattoo art", "Digital collage", "Mixed media", "Assemblage", "Found object",
+  "Land art", "Environmental art", "Public art", "art", "Generative art",
+  "Algorithmic art", "Fractal art", "Glitch art", "Pixel sorting", "Data visualization",
+  "3D modeling", "Virtual sculpture", "Augmented sculpture", "installation", "Projection mapping",
+  "Light art", "Sound art", "Kinetic art", "Robotic art", "AI-generated art",
+  "Deep learning art", "Neural network art", "GAN art", "Style transfer", "Text-to-image",
+  "Image-to-image", "Semantic segmentation", "Object detection", "Pose estimation", "Scene reconstruction",
+  "Motion capture", "Virtual reality art", "Augmented reality art", "Mixed reality art", "Immersive art",
+  "360-degree art", "360-degree video", "360-degree photography", "360-degree painting", "360-degree drawing",
+  "video", "photography", "painting", "drawing", "sculpture",
+  "installation", "performance", "sound", "light", "space",
+  "environment", "narrative", "storytelling", "game", "simulation",
+  "experience", "media", "technology", "design", "art education",
+  "art therapy", "art history", "art criticism", "art curation", "art exhibition",
+  "art festival", "art workshop", "art studio", "art gallery", "art museum",
+  "art space", "art lab", "art center", "art institute", "art organization",
+  "art community", "art network", "art platform", "art project", "art initiative",
+  "art program", "art curriculum", "art course", "art class", "art session",
+  "art event", "art performance", "art show", "art display", "art presentation",
+  "art demonstration", "art installation", "art exhibition", "art gallery", "art museum",
+  "art space", "art lab", "art center", "art institute", "art organization",
+  "art community", "art network", "art platform", "art project", "art initiative",
+  "art program", "art curriculum", "art course", "art class", "art session",
+  "art event", "art performance", "art show", "art display", "art presentation", "Interactive video", "Interactive photography", "Interactive painting", "Interactive drawing", "Interactive sculpture",
+  "Interactive installation", "Interactive performance", "Interactive sound", "Interactive light", "Interactive space",
+  "Interactive environment", "Interactive narrative", "Interactive storytelling", "Interactive game", "Interactive simulation",
+  "Interactive experience", "Interactive media", "Interactive technology", "Interactive design", "Interactive education",
+  "Interactive therapy", "Interactive history", "Interactive criticism", "Interactive curation", "Interactive exhibition",
+  "Interactive festival", "Interactive workshop", "Interactive studio", "Interactive gallery", "Interactive museum",
+  "Interactive lab", "Interactive center", "Interactive institute", "Interactive organization", "Interactive community",
+  "Interactive network", "Interactive platform", "Interactive project", "Interactive initiative", "Interactive program",
+  "Interactive curriculum", "Interactive course", "Interactive class", "Interactive session", "Interactive event",
+  "Interactive show", "Interactive display", "Interactive presentation", "Interactive demonstration", "Interactive VR",
+  "Interactive AR", "Interactive MR", "Immersive storytelling", "Immersive design", "Immersive installation",
+  "Immersive performance", "Immersive exhibition", "Immersive gallery", "Immersive museum", "Immersive lab",
+  "Immersive center", "Immersive institute", "Immersive community", "Immersive network", "Immersive platform",
+  "Immersive project", "Immersive initiative", "Immersive program", "Immersive curriculum", "Immersive course",
+  "Immersive class", "Immersive session", "Immersive event", "Immersive show", "Immersive display",
+  "Immersive presentation", "Immersive demonstration", "Fantasy cityscape", "Futuristic metropolis", "Cyberpunk streets",
+  "Steampunk machinery", "Sci-fi interior", "Alien architecture", "Mystical forest", "Ancient temple",
+  "Lost civilization", "Floating islands", "Crystal caves", "Volcanic landscape", "Underwater city",
+  "Ice cavern", "Desert oasis", "Rainforest canopy", "Mountain fortress", "Space colony",
+  "Time-lapse scene", "Hyperreal landscape", "Ultra wide-angle", "Miniature scene", "Macro nature",
+  "Fantasy flora", "Fantasy fauna", "Mechanical creature", "Robotic animal", "Alien creature",
+  "Mystic creature", "Dragon flight", "Wizard duel", "Sorcerer battle", "Magic spell effect",
+  "Elemental magic", "Fire magic", "Water magic", "Air magic", "Earth magic",
+  "Lightning magic", "Ice magic", "Dark magic", "Light magic", "Celestial magic",
+  "Steampunk vehicle", "Futuristic vehicle", "Hover bike", "Spaceship interior", "Spaceship exterior",
+  "Space battle", "Mech battle", "Robot uprising", "Alien invasion", "Fantasy battle",
+  "Epic war scene", "Hero portrait", "Villain portrait", "Character concept", "Character illustration",
+  "Character design detailed", "Character sheet", "Costume design", "Fantasy armor set", "Sci-fi armor set",
+  "Spacesuit design", "Mecha pilot", "Anime hero", "Anime villain", "Anime sidekick",
+  "Chibi character", "Ghibli style character", "Disney style character", "Pixar style character", "Cartoon hero",
+  "Cartoon villain", "Cartoon sidekick", "Comic hero", "Comic villain", "Comic sidekick",
+  "Graphic novel panel", "Storyboard", "Film concept art", "Movie poster", "Video game poster",
+  "Fantasy illustration", "Sci-fi illustration", "Cyberpunk illustration", "Steampunk illustration", "Surreal illustration",
+  "Abstract illustration", "Modern illustration", "Retro illustration", "Vintage illustration", "Pop art illustration",
+  "Low poly art", "3D render art", "Matte painting art", "Photo realistic art", "Ultra-detailed render",
+  "Cinematic lighting art", "Studio lighting art", "Soft lighting", "Hard lighting", "High contrast lighting",
+  "Neon lighting", "Glow lighting", "Backlighting", "Silhouette lighting", "Ambient lighting",
+  "Top-down view", "Bird-eye view", "Worm-eye view", "Isometric view", "Tilted perspective",
+  "Wide-angle lens", "Fish-eye lens", "Macro lens", "Telephoto lens", "Drone view",
+  "Long exposure photography", "Motion blur photography", "HDR photography", "Low-key photography", "High-key photography",
+  "Soft focus photography", "Bokeh effect", "Film grain effect", "Vintage photography", "Retro photography",
+  "Digital painting", "Oil painting", "Watercolor painting", "Acrylic painting", "Ink illustration",
+  "Sketch drawing", "Line art drawing", "Concept sketch", "Storyboard sketch", "Character sketch",
+  "Portrait sketch", "Fantasy sketch", "Sci-fi sketch", "Anime sketch", "Cartoon sketch",
+  "3D modeling", "3D sculpting", "Virtual sculpture", "Augmented sculpture", "3D printing model",
+  "Generative art", "Algorithmic art", "Fractal art", "Glitch art", "Pixel sorting",
+  "Data visualization art", "Projection mapping art", "Light art installation", "Sound art installation", "Kinetic art installation",
+  "Robotic art installation", "AI-generated art installation", "Deep learning art", "Neural network art", "GAN art",
+  "Style transfer art", "Text-to-image art", "Image-to-image art", "Semantic segmentation art", "Object detection art",
+  "Pose estimation art", "Scene reconstruction art", "Motion capture art", "Virtual reality art", "Augmented reality art",
+  "Mixed reality art", "Immersive installation art", "360-degree painting", "360-degree drawing", "360-degree photography",
+  "360-degree video", "Fantasy portrait", "Epic landscape", "Futuristic cityscape", "Steampunk cityscape", "Cyberpunk cityscape",
+  "Underwater landscape", "Volcanic landscape", "Crystal landscape", "Floating islands", "Mystical forest",
+  "Ancient ruins", "Lost civilization", "Alien world", "Spaceship interior", "Spaceship exterior",
+  "Epic space battle", "Mecha battle", "Robot uprising", "Wizard duel", "Sorcerer duel",
+  "Magic spell effect", "Elemental magic", "Fire magic", "Water magic", "Air magic",
+  "Earth magic", "Lightning magic", "Ice magic", "Dark magic", "Light magic",
+  "Celestial magic", "Steampunk machinery", "Cyberpunk alley", "Medieval village", "Futuristic vehicle", "Ancient ruins",
+  "Post-apocalyptic scene", "Time travel scene", "Dreamscape illustration", "Surreal portrait", "Fantasy beast",
+  "Cybernetic organism", "Alien landscape", "Virtual reality scene", "Augmented reality scene", "Holographic effect",
+  "Neon cityscape", "Retro-futuristic city", "Art deco building", "Gothic building", "Baroque interior",
+  "Renaissance painting", "Victorian street", "Edwardian architecture", "Art Nouveau design", "Constructivism art",
+  "Dadaism art", "Cubism art", "Fauvism art", "Expressionism art", "Realism painting",
+  "Photorealism painting", "Hyperrealism painting", "Conceptual art piece", "Installation art piece", "Performance art piece",
+  "Street art mural", "Graffiti wall", "Tattoo design", "Digital collage", "Mixed media art",
+  "Assemblage art", "Found object art", "Land art installation", "Environmental art", "Public art installation",
+  "Generative AI art", "Algorithmic AI art", "Fractal AI art", "Glitch AI art", "Pixel sorting AI art",
+  "Data visualization AI art", "3D modeling AI art", "Virtual sculpture AI art", "Augmented sculpture AI art", "Interactive AI art",
+  "Projection mapping AI art", "Light AI art", "Sound AI art", "Kinetic AI art", "Robotic AI art",
+  "AI-generated portrait", "AI-generated landscape", "AI-generated fantasy", "AI-generated sci-fi", "AI-generated cyberpunk",
+  "AI-generated steampunk", "AI-generated anime", "AI-generated cartoon", "AI-generated pixel art", "AI-generated minimalist",
+  "AI-generated abstract", "AI-generated surreal", "AI-generated watercolor", "AI-generated oil painting", "AI-generated impressionist",
+  "AI-generated modern", "AI-generated vintage", "AI-generated retro", "AI-generated pop art", "AI-generated low poly",
+  "AI-generated concept art", "AI-generated 3D render", "AI-generated matte painting", "AI-generated photo realistic", "AI-generated epic",
+  "AI-generated fantasy landscape", "AI-generated futuristic city", "AI-generated dark fantasy", "AI-generated bright", "AI-generated moody",
+  "AI-generated cinematic", "AI-generated ultra-detailed", "AI-generated sketch", "AI-generated line art", "AI-generated monochrome",
+  "AI-generated vaporwave", "AI-generated cyberdelic", "AI-generated anime style", "AI-generated chibi", "AI-generated ghibli",
+  "AI-generated character design", "AI-generated illustration", "AI-generated comic", "AI-generated graphic novel", "AI-generated studio lighting",
+  "AI-generated neon lights", "AI-generated high contrast", "AI-generated soft light", "AI-generated epic composition", "AI-generated macro",
+  "AI-generated minimal", "AI-generated cartoonish", "AI-generated painterly", "AI-generated stylized", "AI-generated realistic portrait",
+  "AI-generated fantasy character", "AI-generated sci-fi armor", "AI-generated mecha", "AI-generated magic", "AI-generated robot","Futuristic interior", "Cyberpunk market", "Steampunk factory", "Alien jungle", "Mystic temple",
+  "Floating fortress", "Crystal mountain", "Underwater palace", "Glowing cave", "Moon base",
+  "Space colony city", "Post-apocalyptic street", "Time travel scene", "Dream world", "Surreal landscape",
+  "Fantasy desert", "Frozen tundra", "Rainforest waterfall", "Volcanic island", "Sunken ship",
+  "Lost city ruins", "Sci-fi highway", "Neon night city", "Retro diner", "Abandoned laboratory",
+  "Magic forest", "Epic battlefield", "Wizard tower", "Sorcerer duel", "Dragon nest",
+  "Flying ship", "Mechanical robot", "Alien spacecraft", "Cybernetic creature", "Fantasy palace",
+  "Mystical portal", "Ancient library", "Enchanted garden", "Haunted mansion", "Ghost town",
+  "Steampunk airship", "Futuristic train", "Cyberpunk alleyway", "Urban skyline", "Fantasy cave",
+  "Crystal cavern", "Glitch world", "Digital realm", "Virtual city", "Augmented landscape",
+  "Holographic projection", "Neon temple", "Fantasy waterfall", "Mystic lake", "Floating islands",
+  "Celestial sky", "Aurora borealis", "Starship bridge", "Time machine", "Steampunk clock tower",
+  "Cyberpunk rooftop", "Sci-fi lab", "Post-apocalyptic wasteland", "Fantasy battlefield", "Wizard duel arena",
+  "Mystical mountains", "Alien jungle temple", "Retro arcade", "Pixel dungeon", "Fantasy village",
+  "Magic academy", "Dragon lair", "Underwater ruins", "Futuristic stadium", "Ancient coliseum",
+  "Cyberpunk neon street", "Steampunk workshop", "Mystic forest path", "Haunted forest", "Surreal desert",
+  "Futuristic skyscraper", "Floating marketplace", "Epic canyon", "Fantasy cliffside", "Sky city",
+  "Neon night market", "Retro cyberpunk club", "Glitch cityscape", "Pixel art landscape", "3D fantasy world",
+  "Cinematic hero portrait", "Epic villain portrait", "Character in armor", "Fantasy creature design", "Sci-fi mech design",
+  "Anime protagonist", "Chibi character", "Ghibli-style scene", "Cartoon adventure", "Comic panel scene",
+  "Illustrated map", "Studio lighting portrait", "High-key portrait", "Low-key portrait", "Soft light portrait",
+  "Neon-lit portrait", "Backlit silhouette", "Macro nature photography", "Wide-angle architecture", "Tilt-shift landscape",
+  "Long exposure cityscape", "Motion blur scene", "HDR landscape", "Soft focus portrait", "Film grain effect",
+  "Digital painting scene", "Oil painting landscape", "Watercolor cityscape", "Acrylic abstract", "Ink illustration",
+  "Line art portrait", "Fantasy sketch", "Sci-fi sketch", "Anime sketch", "Cartoon sketch",
+  "3D model character", "3D render environment", "Matte painting concept", "Photo realistic scene", "Epic cinematic render",
+  "Fantasy landscape illustration", "Futuristic cityscape illustration", "Dark fantasy illustration", "Bright fantasy scene", "Moody cinematic scene",
+  "Ultra-detailed render", "Epic composition painting", "Stylized cartoon scene", "Realistic portrait painting", "Fantasy character illustration",
+  "Sci-fi armor design", "Mecha illustration", "Magic spell visual", "Robot design", "Alien world illustration",
+  "Fantasy castle render", "Ocean scene painting", "Desert scene painting", "Mountain scene painting", "Night sky illustration",
+  "Aurora borealis painting", "Foggy forest illustration", "Rainy cityscape", "Snowy landscape", "Sunset beach",
+  "Sunrise mountain", "Stormy sea", "Action scene illustration", "Dynamic pose sketch", "Fashion illustration render",
+  "Photography style portrait", "Cinematic lighting render", "Epic scale environment", "High detail render", "HDR interior",
+  "Soft focus effect", "Film grain effect render", "Tilt-shift scene", "Drone view landscape", "Top-down perspective",
+  "Isometric city render", "Low-key lighting render", "High-key lighting render", "Backlight effect", "Silhouette illustration",
+  "Glow effect render", "Bokeh effect photography", "Macro shot illustration", "Wide-angle lens render", "Long exposure scene",
+  "Tilted perspective illustration", "Motion blur render", "Fantasy armor design", "Dragon illustration", "Mythical creature render",
+  "Spaceship design", "Alien creature illustration", "Wizard portrait", "Sorcerer portrait", "Steampunk cityscape illustration",
+  "Cyberpunk alley render", "Medieval village illustration", "Futuristic vehicle render", "Ancient ruins illustration", "Underwater scene render",
+  "Space station design", "Post-apocalyptic cityscape", "Time travel illustration", "Dreamscape render", "Surreal portrait painting",
+  "Fantasy beast illustration", "Cybernetic organism render", "Alien landscape illustration", "Virtual reality render", "Augmented reality scene",
+  "Holographic design", "Neon cityscape render", "Retro-futuristic design", "Art deco building render", "Gothic cathedral illustration",
+  "Baroque interior render", "Renaissance painting scene", "Victorian street illustration", "Edwardian architecture render", "Art Nouveau design",
+  "Constructivism artwork", "Dadaism artwork", "Cubism artwork", "Fauvism artwork", "Expressionism painting",
+  "Realism artwork", "Photorealism render", "Hyperrealism illustration", "Conceptual art scene", "Installation art render",
+  "Performance art scene", "Street art illustration", "Graffiti wall render", "Mural illustration", "Tattoo art design",
+  "Digital collage artwork", "Mixed media artwork", "Assemblage artwork", "Found object art", "Land art installation",
+  "Environmental art scene", "Public art installation", "Interactive art installation", "Generative art render", "Algorithmic art scene",
+  "Fractal art illustration", "Glitch art render", "Pixel sorting effect", "Data visualization art", "3D modeling scene",
+  "Virtual sculpture render", "Augmented sculpture illustration", "Interactive installation scene", "Projection mapping render", "Light art installation",
+  "Sound art installation", "Kinetic art render", "Robotic art illustration", "AI-generated portrait", "AI-generated landscape",
+  "Deep learning render", "Neural network illustration", "GAN art render", "Style transfer illustration", "Text-to-image render",
+  "Image-to-image illustration", "Semantic segmentation render", "Object detection visualization", "Pose estimation scene", "Scene reconstruction render",
+  "Motion capture visualization", "Virtual reality art scene", "Augmented reality art render", "Mixed reality art illustration", "Immersive art experience",
+  "360-degree panorama", "360-degree video render", "360-degree photography scene", "360-degree painting illustration", "360-degree drawing render",
+  "Fantasy city skyline", "Futuristic skyline render", "Cyberpunk neon skyline", "Steampunk cityscape render", "Mystic forest skyline",
+  "Floating island city", "Crystal mountain city", "Underwater cityscape render", "Glowing cavern city", "Moon base city",
+  "Space colony skyline", "Post-apocalyptic skyline", "Time travel city", "Dream world skyline", "Surreal cityscape",
+  "Fantasy desert city", "Frozen tundra city", "Rainforest canopy city", "Volcanic island city", "Sunken ship city",
+  "Lost civilization skyline", "Sci-fi highway scene", "Neon night market scene", "Retro diner scene", "Abandoned laboratory scene",
+  "Magic forest city", "Epic battlefield render", "Wizard tower scene", "Sorcerer duel scene", "Dragon nest scene",
+  "Flying ship scene", "Mechanical robot scene", "Alien spacecraft scene", "Cybernetic creature scene", "Fantasy palace render",
+  "Mystical portal render", "Ancient library scene", "Enchanted garden scene", "Haunted mansion scene", "Ghost town scene",
+  "Steampunk airship scene", "Futuristic train render", "Cyberpunk alleyway scene", "Urban skyline render", "Fantasy cave scene",
+  "Crystal cavern scene", "Glitch world scene", "Digital realm scene", "Virtual city scene", "Augmented landscape render",
+  "Holographic projection scene", "Neon temple render", "Fantasy waterfall render", "Mystic lake scene", "Floating islands render",
+  "Celestial sky render", "Aurora borealis scene", "Starship bridge scene", "Time machine scene", "Steampunk clock tower render",
+  "Cyberpunk rooftop render", "Sci-fi lab render", "Post-apocalyptic wasteland scene", "Fantasy battlefield render", "Wizard duel arena render",
+  "Mystical mountains scene", "Alien jungle temple render", "Retro arcade scene", "Pixel dungeon scene", "Fantasy village render",
+  "Magic academy scene", "Dragon lair render", "Underwater ruins scene", "Futuristic stadium render", "Ancient coliseum scene","Mystic canyon", "Floating waterfall", "Crystal jungle", "Bioluminescent forest", "Alien desert",
+  "Cybernetic marketplace", "Steampunk observatory", "Futuristic dojo", "Time-warp street", "Virtual bazaar",
+  "Post-human city", "Quantum lab", "Ethereal plains", "Dreamlike cliffs", "Surreal river",
+  "Galactic harbor", "Stellar garden", "Aurora meadow", "Floating monastery", "Holographic plaza",
+  "Celestial tower", "Magical swamp", "Luminous tundra", "Glass city", "Prismatic canyon",
+  "Mechanical reef", "Neo-Victorian street", "Clockwork harbor", "Crystal palace", "Fantasy volcano",
+  "Cyberpunk lagoon", "Digital cathedral", "Holographic bridge", "Steam-powered locomotive", "Futuristic lighthouse",
+  "Floating carnival", "Bio-engineered forest", "Fantasy skyport", "Alien bazaar", "Mystic ice caves",
+  "Neo-Tokyo street", "Solar farm city", "Galactic bazaar", "Underwater laboratory", "Sky temple",
+  "Arcane academy", "Quantum garden", "Virtual desert", "Neon coral reef", "Augmented canyon",
+  "Steampunk fortress", "Cyberpunk skyscraper", "Post-apocalyptic playground", "Fantasy harbor", "Mystical riverbank",
+  "Floating library", "Holographic forest", "Glowing cliffside", "Bioluminescent lagoon", "Crystal cavern city",
+  "Futuristic metro", "Cybernetic skybridge", "Mechanical jungle", "Magical floating islands", "Neo-fantasy village",
+  "Stellar observatory", "Dreamscape harbor", "Surreal canyon", "Ethereal ocean", "Mystical mountain pass",
+  "Arcane temple", "Quantum bridge", "Galactic ruins", "Futuristic canyon city", "Alien jungle fortress",
+  "Digital mountain range", "Cybernetic swamp", "Steampunk airport", "Floating clocktower", "Holographic bazaar",
+  "Crystal plains", "Neon river", "Virtual meadow", "Mystical desert plateau", "Post-apocalyptic citadel",
+  "Bio-luminescent marsh", "Mechanical tundra", "Futuristic bridge", "Neo-gothic cathedral", "Fantasy coral reef",
+  "Starlit canyon", "Aurora archipelago", "Ethereal lighthouse", "Surreal mountain lake", "Holographic canyon",
+  "Floating solar tower", "Cyberpunk vineyard", "Steam-powered arena", "Neon jungle", "Crystal lighthouse",
+  "Magical observatory", "Futuristic theater", "Quantum plaza", "Arcane bridge", "Alien waterfall",
+  "Glowing meadow", "Mechanical canyon", "Virtual canyon city", "Neo-fantasy citadel", "Mystical forest glade",
+  "Floating bazaar", "Post-human tower", "Celestial plaza", "Bio-engineered canyon", "Dreamlike harbor",
+  "Steampunk arena", "Cyberpunk bridge", "Futuristic village", "Arcane lighthouse", "Holographic archipelago",
+  "Crystal bridge", "Neo-gothic harbor", "Floating reef", "Mystical canyon city", "Ethereal harbor",
+  "Virtual tundra", "Surreal plaza", "Alien cliffs", "Mechanical reef city", "Fantasy waterfall city",
+  "Stellar canyon", "Aurora village", "Quantum lighthouse", "Arcane archipelago", "Futuristic jungle",
+  "Neo-fantasy tower", "Cyberpunk ruins", "Steam-powered observatory", "Floating forest", "Holographic reef",
+  "Crystal arena", "Bio-luminescent canyon", "Virtual tower", "Mystical bazaar", "Post-human lighthouse",
+  "Ethereal jungle", "Dreamlike citadel", "Surreal reef", "Mechanical archipelago", "Fantasy jungle village",
+  "Stellar bridge", "Aurora lighthouse", "Quantum citadel", "Arcane forest", "Futuristic cliffside",
+  "Neo-fantasy harbor", "Cyberpunk tower", "Steam-powered bazaar", "Floating canyon", "Holographic village",
+  "Crystal citadel", "Bio-engineered reef", "Virtual archipelago", "Mystical lighthouse", "Post-apocalyptic forest",
+  "Ethereal bazaar", "Dreamlike tower", "Surreal village", "Mechanical harbor", "Fantasy reef city",
+  "Stellar lighthouse", "Aurora canyon", "Quantum forest", "Arcane citadel", "Futuristic reef",
+  "Neo-fantasy archipelago", "Cyberpunk canyon city", "Steam-powered forest", "Floating citadel", "Holographic harbor",
+  "Crystal village", "Bio-luminescent tower", "Virtual forest", "Mystical canyon plaza", "Post-human citadel",
+  "Ethereal reef", "Dreamlike archipelago", "Surreal lighthouse", "Mechanical tower", "Fantasy canyon plaza",
+  "Stellar forest", "Aurora citadel", "Quantum archipelago", "Arcane canyon", "Futuristic tower city",
+  "Neo-fantasy reef", "Cyberpunk forest city", "Steam-powered lighthouse", "Floating archipelago", "Holographic canyon city",
+  "Crystal tower", "Bio-engineered forest city", "Virtual canyon plaza", "Mystical reef", "Post-apocalyptic tower",
+  "Ethereal archipelago", "Dreamlike canyon city", "Surreal forest", "Mechanical citadel", "Fantasy tower city",
+  "Stellar reef", "Aurora archipelago city", "Quantum canyon", "Arcane tower", "Futuristic archipelago",
+  "Neo-fantasy canyon", "Cyberpunk tower city", "Steam-powered reef", "Floating forest city", "Holographic tower",
+  "Crystal archipelago", "Bio-luminescent canyon city", "Virtual tower city", "Mystical archipelago", "Post-human forest",
+  "Ethereal tower city", "Dreamlike reef", "Surreal archipelago city", "Mechanical canyon city", "Fantasy archipelago",
+  "Stellar tower", "Aurora reef city", "Quantum archipelago city", "Arcane reef", "Futuristic canyon plaza",
+  "Neo-fantasy tower city", "Cyberpunk archipelago", "Steam-powered canyon city", "Floating reef city", "Holographic forest city",
+  "Crystal canyon city", "Bio-engineered tower city", "Virtual archipelago city", "Mystical tower city", "Post-apocalyptic archipelago",
+  "Ethereal canyon city", "Dreamlike tower city", "Surreal reef city", "Mechanical tower city", "Fantasy reef city",
+  "Stellar archipelago", "Aurora tower city", "Quantum reef city", "Arcane tower city", "Futuristic reef city",
+  "Neo-fantasy archipelago city", "Cyberpunk reef city", "Steam-powered tower city", "Floating canyon plaza", "Holographic reef city",
+  "Crystal tower city", "Bio-luminescent archipelago", "Virtual reef city", "Mystical tower plaza", "Post-human reef city",
+  "Ethereal archipelago city", "Dreamlike reef city", "Surreal tower city", "Mechanical archipelago", "Fantasy tower plaza",
+  "Stellar reef plaza", "Aurora archipelago plaza", "Quantum tower city", "Arcane reef city", "Futuristic tower plaza",
+  "Neo-fantasy reef plaza", "Cyberpunk tower plaza", "Steam-powered archipelago city", "Floating tower city", "Holographic archipelago plaza",
+  "Crystal reef plaza", "Bio-engineered tower plaza", "Virtual archipelago plaza", "Mystical reef plaza", "Post-apocalyptic tower plaza",
+  "Ethereal tower plaza", "Dreamlike archipelago plaza", "Surreal reef plaza", "Mechanical tower plaza", "Fantasy archipelago plaza",
+  "Stellar tower plaza", "Aurora reef plaza", "Quantum archipelago plaza", "Arcane tower plaza", "Futuristic archipelago plaza",
+  "Neo-fantasy tower plaza", "Cyberpunk archipelago plaza", "Steam-powered reef plaza", "Floating archipelago plaza", "Holographic tower plaza",
+  "Crystal archipelago plaza", "Bio-luminescent tower plaza", "Virtual reef plaza", "Mystical archipelago plaza", "Post-human tower plaza",
+  "Ethereal reef plaza", "Dreamlike tower plaza", "Surreal archipelago plaza", "Mechanical reef plaza", "Fantasy tower plaza",
+  "Stellar archipelago plaza", "Aurora tower plaza", "Quantum reef plaza", "Arcane archipelago plaza", "Futuristic tower plaza",
+  "Neo-fantasy archipelago plaza", "Cyberpunk reef plaza", "Steam-powered tower plaza", "Floating reef plaza", "Holographic archipelago plaza",
+  "Crystal tower plaza", "Bio-engineered reef plaza", "Virtual tower plaza", "Mystical reef plaza", "Post-apocalyptic archipelago plaza",
+  "Ethereal tower plaza", "Dreamlike reef plaza", "Surreal tower plaza", "Mechanical archipelago plaza", "Fantasy reef plaza",
+  "Stellar tower plaza", "Aurora archipelago plaza", "Quantum tower plaza", "Arcane reef plaza", "Futuristic archipelago plaza",
+  "Neo-fantasy tower plaza", "Cyberpunk archipelago plaza", "Steam-powered reef plaza", "Floating tower plaza", "Holographic reef plaza",
+  "Crystal archipelago plaza", "Bio-luminescent tower plaza", "Virtual reef plaza", "Mystical tower plaza", "Post-human archipelago plaza","Biomechanical", "Organic architecture", "Floating ruins", "Neon jungle", "Crystal forest", "Gravity-defying", "Quantum city", "Cybernetic jungle", "Holo-temple", "Bio-luminescent",
+"Fungal city", "Underwater cave", "Volcanic crater", "Magnetic field visualization", "Astral projection", "Time-worn ruins", "Ethereal bridge", "Sky temples", "Celestial palace", "Alien megastructure",
+"Coral metropolis", "Storm-chaser scene", "Energy vortex", "Gravity well", "Dark matter landscape", "Black hole vista", "Quantum vortex", "Alien bazaar", "Steam-powered mech", "Clockwork garden",
+"Floating market", "Skyship fleet", "Bio-mech hybrid", "Neon desert", "Plasma river", "Toxic swamp", "Luminescent canyon", "Iridescent waterfall", "Crystal caves interior", "Bio-dome city",
+"Digital wasteland", "Glitch forest", "Holographic ocean", "Aurora glacier", "Shadow realm", "Phantom cityscape", "Dream palace", "Eldritch temple", "Arcane library", "Magic-infused street",
+"Virtual skyline", "Neon labyrinth", "Cyber dojo", "Mystic ruins", "Runic monoliths", "Floating rocks", "Gravity-defying waterfalls", "Volcanic metropolis", "Eclipse scene", "Planetary ring city",
+"Terraforming scene", "Alien jungle canopy", "Crystal spires", "Ice palace", "Bio-engineered flora", "Cybernetic ruins", "Quantum laboratory", "Futuristic harbor", "Lava river", "Neon lagoon",
+"Plasma storm", "Energy grid city", "Holo-clone scene", "Sky bridge", "Mechanical forest", "Hologram concert", "Celestial observatory", "Asteroid city", "Orbital station", "Underwater research lab",
+"Digital cathedral", "Neon bazaar", "Steam-powered train", "Futuristic colosseum", "Crystal throne room", "Hover arena", "Robot factory", "Mech assembly line", "Alien temple interior", "Virtual garden",
+"Cyberpunk slums", "Arcology city", "Holographic waterfall", "Magical cavern", "Astral lake", "Time anomaly", "Dimensional rift", "Energy barrier", "Neon ice cave", "Cyberpunk subway",
+"Steampunk harbor", "Arcane tower", "Fantasy bridge", "Mystic shrine", "Wizard library interior", "Sorcerer duel arena", "Dragon nest cave", "Floating cliffside", "Mechanical castle", "Celestial bridge",
+"Ghost ship", "Ancient observatory", "Digital void", "Pixel nebula", "Retro arcade alley", "VR battlefield", "Neon aquarium", "Futuristic arena", "Bioluminescent cavern", "Virtual rainforest",
+"Steam-powered mech city", "Magic academy library", "Wizard tower courtyard", "Sorcery duel field", "Dragon flight arena", "Mecha cockpit", "Alien reef", "Holographic library", "Cyber dojo interior", "Fantasy marketplace",
+"Virtual cathedral", "Digital observatory", "Glitch metropolis", "Ethereal skyline", "Neon jungle city", "Crystal fortress", "Steampunk marketplace", "Underwater kingdom", "Bio-luminescent canyon", "Futuristic ruins",
+"Magnetic levitation city", "Quantum library", "Hover train station", "Plasma canyon", "Astral ocean", "Time-warp street", "Virtual stadium", "Robot arena", "Energy dome", "Cybernetic lab",
+"Fungal palace", "Alien canyon city", "Crystal river", "Gravity tower", "Sky island", "Floating laboratory", "Mechanical jungle", "Holo-temple interior", "Fantasy canyon", "Aurora fortress",
+"Arcane forest", "Mystical cliffside", "Dragon mountain", "Ethereal waterfall", "Celestial city", "Glowing temple", "Plasma lagoon", "Virtual mountain", "Steampunk skyport", "Neon observatory",
+"Futuristic cathedral", "Quantum skyscraper", "Bio-engineered forest", "Cyberpunk port", "Glitch canyon", "Digital mountain", "Holo-arena", "Time-travel station", "Retro-futuristic street", "Neon palace",
+"Floating observatory", "Mechanical canyon", "Crystal bridge", "Astral tower", "Ethereal market", "Pixel fortress", "VR marketplace", "Futuristic lab interior", "Magic-infused canyon", "Alien spire",
+"Underwater cavern city", "Glowing jungle temple", "Digital lava flow", "Cyberpunk mountain", "Steampunk ocean port", "Mystic ice cavern", "Floating magic academy", "Holographic garden", "Fantasy nebula", "Arcane cityscape",
+"Mechanical fortress", "Virtual bridge", "Time-lapse city", "Glitch fortress", "Neon canyon", "Plasma palace", "Bio-luminescent jungle", "Futuristic harbor interior", "Celestial observatory interior", "Dragon arena",
+"Robot cityscape", "Mech arena", "Steampunk library", "Mystical jungle", "Floating coliseum", "Quantum bridge", "Pixel cityscape", "VR castle", "Holo-fortress", "Ethereal arena",
+"Celestial jungle", "Glitch temple", "Neon fortress", "Magic cityscape", "Astral palace", "Virtual coliseum", "Crystal jungle", "Time-warp fortress", "Cybernetic canyon", "Mechanical observatory",
+"Underwater city interior", "Futuristic castle", "Arcane canyon", "Mystic tower", "Dragon fortress", "Sorcery palace", "Ethereal coliseum", "Neon jungle interior", "Bio-engineered canyon", "Pixel jungle",
+"Quantum canyon", "Floating palace", "Holographic arena", "VR canyon", "Digital jungle", "Steampunk arena", "Mechanical palace", "Alien fortress", "Magic fortress", "Futuristic canyon",
+"Arcane observatory", "Mystical palace", "Astral fortress", "Glowing coliseum", "Time-travel fortress", "Celestial arena", "Fantasy coliseum", "Virtual observatory", "Cyberpunk palace", "Crystal observatory"
+];
+
+    
+    // Dynamically add options
+    styleOptions.forEach(style=>{
+    const opt = document.createElement('option');
+    opt.value = style;
+    opt.textContent = style;
+    aiStyleSelect.appendChild(opt);
+    });
+    const aiStatus = document.getElementById('aiStatus');
+
+    // ---- Helpers ----
+    const uid = ()=>Date.now().toString(36)+Math.random().toString(36).slice(2,8);
+    const wait = ms => new Promise(r=>setTimeout(r,ms));
+    function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c])); }
+
+    // settings bindings
+    defaultDurationInput.addEventListener('change', ()=> state.defaultDuration = Math.max(0.1, parseFloat(defaultDurationInput.value) || 2.5));
+    fpsInput.addEventListener('change', ()=> state.fps = Math.max(10, Math.min(60, parseInt(fpsInput.value) || 30)));
+    transitionSelect.addEventListener('change', ()=> state.transition = transitionSelect.value);
+
+    genAI.addEventListener('click', async ()=>{
+    const prompt = (aiPrompt.value || '').trim();
+    const style = (aiStyle.value || '').trim();
+    if(!prompt){ aiStatus.textContent = 'Enter a prompt to generate.'; return; }
+    aiStatus.textContent = 'Generating...';
+    
+    try {
+    // build full prompt
+    const full = prompt + (style ? ', '+style : '');
+    const url = `https://image.pollinations.ai/prompt/${encodeURIComponent(full)}?width=3200&height=2800`;
+    
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    
+    img.onload = ()=>{
+    // --- crop bottom 148px ---
+    const cropCanvas = document.createElement('canvas');
+    const cropCtx = cropCanvas.getContext('2d');
+    const cropHeight = img.height - 50;
+    cropCanvas.width = img.width;
+    cropCanvas.height = cropHeight;
+    cropCtx.drawImage(img, 0, 0, img.width, cropHeight, 0, 0, img.width, cropHeight);
+    
+    const finalImg = new Image();
+    finalImg.crossOrigin = 'anonymous';
+    finalImg.onload = ()=>{
+    addSlideFromImage(finalImg, 'AI-'+uid()+'.png');
+    aiStatus.textContent = 'Generated and added to slides ✅';
+    setTimeout(()=> aiStatus.textContent = '', 3000);
+    };
+    finalImg.src = cropCanvas.toDataURL('image/png');
+    };
+    
+    img.onerror = ()=>{
+    aiStatus.textContent = 'Generation failed.';
+    console.error('Pollinations load failed for URL:', url);
+    };
+    
+    img.src = url;
+    } catch(err) {
+    aiStatus.textContent = 'Error: '+err.message;
+    console.error(err);
+    }
+    });
+
+    // ---- Upload & drag/drop ----
+    dropArea.addEventListener('click', ()=> fileInput.click());
+    fileInput.addEventListener('change', ()=> {
+      handleFiles([...fileInput.files]);
+      fileInput.value = '';
+    });
+    ['dragenter','dragover','dragleave','drop'].forEach(ev=>{
+      dropArea.addEventListener(ev, e=>{ e.preventDefault(); e.stopPropagation(); });
+    });
+    dropArea.addEventListener('dragover', ()=> dropArea.classList.add('border-primary'));
+    dropArea.addEventListener('dragleave', ()=> dropArea.classList.remove('border-primary'));
+    dropArea.addEventListener('drop', (e)=>{
+      dropArea.classList.remove('border-primary');
+      const files = [...(e.dataTransfer.files || [])].filter(f=>f.type && f.type.startsWith('image/'));
+      handleFiles(files);
+    });
+
+    function handleFiles(files){
+      files.forEach(file=>{
+        const img = new Image();
+        img.onload = ()=> addSlideFromImage(img, file.name);
+        img.onerror = ()=> console.warn('Image load fail', file.name);
+        img.src = URL.createObjectURL(file);
+      });
+    }
+
+    function addSlideFromImage(img, fileName){
+      // store natural size
+      const slide = {
+        id: uid(),
+        fileName: fileName || ('img-'+Date.now()),
+        imgEl: img,
+        duration: state.defaultDuration,
+        w: img.naturalWidth,
+        h: img.naturalHeight
+      };
+      state.slides.push(slide);
+      renderThumbs();
+      updateCanvasSizeAndLetterbox();
+    }
+
+    // ---- Thumbnails ----
+    function renderThumbs(){
+      thumbList.innerHTML = '';
+      state.slides.forEach((s,idx)=>{
+        const row = document.createElement('div');
+        row.className = 'thumb-row bg-transparent';
+        row.style.alignItems = 'center';
+        row.innerHTML = `
+          <div class="d-flex align-items-center">
+            <img src="${s.imgEl.src}" class="thumb me-2" alt="">
+            <div class="thumb-meta">
+              <div style="font-weight:600">Slide ${idx+1}</div>
+              <div class="small-muted">${escapeHtml(s.fileName)} • ${s.w}×${s.h}</div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <input class="form-control form-control-sm me-2" style="width:84px" type="number" min="0.1" step="0.1" value="${s.duration}">
+            <button class="btn btn-sm btn-outline-light me-1" title="Up">↑</button>
+            <button class="btn btn-sm btn-outline-light me-1" title="Down">↓</button>
+            <button class="btn btn-sm btn-danger" title="Delete">✕</button>
+          </div>
+        `;
+        // bindings
+        const inp = row.querySelector('input');
+        inp.addEventListener('change', ()=> {
+          s.duration = Math.max(0.1, parseFloat(inp.value) || state.defaultDuration);
+        });
+        row.querySelector('button[title="Up"]').addEventListener('click', ()=> { moveSlide(idx, idx-1); });
+        row.querySelector('button[title="Down"]').addEventListener('click', ()=> { moveSlide(idx, idx+1); });
+        row.querySelector('button[title="Delete"]').addEventListener('click', ()=> { state.slides.splice(idx,1); renderThumbs(); updateCanvasSizeAndLetterbox(); });
+        thumbList.appendChild(row);
+      });
+    }
+
+    function moveSlide(from, to){
+      if(to<0 || to>=state.slides.length) return;
+      const [item] = state.slides.splice(from,1);
+      state.slides.splice(to,0,item);
+      renderThumbs();
+    }
+
+    // ---- Canvas sizing & letterboxing policy ----
+    // Largest detected frame becomes canvas size. Smaller images are drawn at native size centered.
+    function updateCanvasSizeAndLetterbox(){
+      if(!state.slides.length) return;
+      let maxW = 0, maxH = 0;
+      state.slides.forEach(s=>{ maxW = Math.max(maxW, s.w); maxH = Math.max(maxH, s.h); });
+      // clamp to some limits to avoid huge canvases in browser
+      const maxAllowed = { w: 3840, h: 2160 };
+      maxW = Math.min(maxW, maxAllowed.w);
+      maxH = Math.min(maxH, maxAllowed.h);
+      previewCanvas.width = Math.max(1, Math.round(maxW));
+      previewCanvas.height = Math.max(1, Math.round(maxH));
+      canvasRes.textContent = `${previewCanvas.width}×${previewCanvas.height}`;
+      // redraw a letterboxed background sample
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0,0,previewCanvas.width, previewCanvas.height);
+      // draw first slide as placeholder
+      const s0 = state.slides[0];
+      if(s0) drawImageAtNativeCenter(s0.imgEl);
+    }
+
+    function drawImageAtNativeCenter(img, alpha=1, dx=0, dy=0, scale=1, rotate=0, blurPx=0){
+      ctx.save();
+      if(blurPx) ctx.filter = `blur(${blurPx}px)`;
+      ctx.globalAlpha = alpha;
+      const cw = previewCanvas.width, ch = previewCanvas.height;
+      const iw = img.naturalWidth * scale, ih = img.naturalHeight * scale;
+      const x = Math.round((cw - iw) / 2 + dx);
+      const y = Math.round((ch - ih) / 2 + dy);
+      if(rotate !== 0){
+        ctx.translate(cw/2, ch/2);
+        ctx.rotate(rotate);
+        ctx.drawImage(img, -iw/2 + dx, -ih/2 + dy, iw, ih);
+      } else {
+        ctx.drawImage(img, x, y, iw, ih);
+      }
+      ctx.restore();
+    }
+
+    // ---- Transition drawing ----
+    function drawFrameForTransition(cur, next, progress){
+      // progress in [0,1)
+      ctx.fillStyle = '#000';
+      ctx.fillRect(0,0,previewCanvas.width, previewCanvas.height);
+
+      if(!next){
+        // single still
+        drawImageAtNativeCenter(cur.imgEl, 1);
+        return;
+      }
+
+      const t = Math.min(1, Math.max(0, progress));
+      const trans = state.transition;
+
+      switch(trans){
+        case 'fade':
+          drawImageAtNativeCenter(cur.imgEl, 1 - t);
+          drawImageAtNativeCenter(next.imgEl, t);
+          break;
+
+        case 'slide':
+          // slide left -> next slides in from right
+          const dxCur = -previewCanvas.width * t;
+          const dxNext = previewCanvas.width * (1 - t);
+          drawImageAtNativeCenter(cur.imgEl, 1, dxCur, 0);
+          drawImageAtNativeCenter(next.imgEl, 1, dxNext, 0);
+          break;
+
+        case 'zoom':
+          // zoom out current while zooming in next
+          const scaleCur = 1 - 0.25 * t;
+          const scaleNext = 1 + 0.25 * (t - 1);
+          drawImageAtNativeCenter(cur.imgEl, 1 - t*0.3, 0, 0, scaleCur);
+          drawImageAtNativeCenter(next.imgEl, t, 0, 0, 1 + 0.25 * t);
+          break;
+
+        case 'rotate':
+          // rotate current out, rotate next in
+          drawImageAtNativeCenter(cur.imgEl, 1 - t, 0, 0, 1, t * Math.PI * 0.8);
+          drawImageAtNativeCenter(next.imgEl, t, 0, 0, 1, (t-1) * Math.PI * 0.8);
+          break;
+
+        case 'blur':
+          drawImageAtNativeCenter(cur.imgEl, 1, 0,0,1,0, t*12);
+          drawImageAtNativeCenter(next.imgEl, t, 0,0,1,0, (1-t)*6);
+          break;
+
+        case 'flash':
+          drawImageAtNativeCenter(cur.imgEl, 1);
+          if(t > 0.45 && t < 0.55){
+            ctx.fillStyle = 'rgba(255,255,255,0.85)';
+            ctx.fillRect(0,0,previewCanvas.width, previewCanvas.height);
+          } else {
+            drawImageAtNativeCenter(next.imgEl, t*0.9);
+          }
+          break;
+
+        case 'glitch':
+          // simple glitch: draw cur, then overlay small color shifts of next
+          drawImageAtNativeCenter(cur.imgEl, 1);
+          const slices = 6;
+          for(let i=0;i<slices;i++){
+            const sx = Math.random() * previewCanvas.width * 0.02 * t;
+            ctx.globalCompositeOperation = 'lighter';
+            ctx.drawImage(next.imgEl, sx, Math.random()*10 - 5, next.imgEl.naturalWidth, next.imgEl.naturalHeight,
+                          (previewCanvas.width - next.imgEl.naturalWidth)/2 + Math.random()*20*t, (previewCanvas.height - next.imgEl.naturalHeight)/2 + Math.random()*10*t,
+                          next.imgEl.naturalWidth, next.imgEl.naturalHeight);
+            ctx.globalCompositeOperation = 'source-over';
+          }
+          break;
+
+        case 'pan':
+          // slow left to right pan on current, next appears after
+          const panX = previewCanvas.width * 0.2 * t;
+          drawImageAtNativeCenter(cur.imgEl, 1, -panX, 0);
+          drawImageAtNativeCenter(next.imgEl, t, 0,0);
+          break;
+
+        case 'none':
+        default:
+          drawImageAtNativeCenter(cur.imgEl, 1);
+          break;
+      }
+    }
+
+    // ---- Playback / Preview ----
+    let _stopPreview = false;
+    previewBtn.addEventListener('click', async ()=>{
+      if(_stopPreview){
+        _stopPreview = false; // toggle off
+        return;
+      }
+      _stopPreview = false;
+      await previewSequence();
+    });
+
+    async function previewSequence(){
+      if(!state.slides.length) return;
+      // ensure canvas size is updated
+      updateCanvasSizeAndLetterbox();
+      const fps = state.fps;
+      const frameMs = 1000 / fps;
+
+      for(let i=0; i<state.slides.length; i++){
+        if(_stopPreview) break;
+        const cur = state.slides[i];
+        const next = (i < state.slides.length-1) ? state.slides[i+1] : null;
+        const durationMs = Math.max(100, Math.round((cur.duration || state.defaultDuration) * 1000));
+        const frames = Math.max(1, Math.round(durationMs / frameMs));
+        for(let f=0; f<frames; f++){
+          if(_stopPreview) break;
+          const progress = frames<=1 ? 0 : f / (frames-1);
+          drawFrameForTransition(cur, next, progress);
+          await wait(frameMs);
+        }
+      }
+    }
+
+    // ---- Export (letterboxed consistent video) ----
+    exportBtn.addEventListener('click', async ()=>{
+      if(!state.slides.length){
+        exportStatus.textContent = 'Add slides first.';
+        return;
+      }
+      exportStatus.textContent = '';
+      exportProgressWrap.style.display = 'block';
+      exportProgress.style.width = '0%';
+      // ensure canvas sized to largest
+      updateCanvasSizeAndLetterbox();
+      const fps = state.fps;
+      const frameMs = 1000 / fps;
+
+      // setup MediaRecorder
+      const stream = previewCanvas.captureStream(fps);
+      let recorder;
+      const mimeCandidates = [
+        'video/webm;codecs=vp9,opus',
+        'video/webm;codecs=vp8,opus',
+        'video/webm'
+      ];
+      let mime = '';
+      for(const m of mimeCandidates){
+        try{ recorder = new MediaRecorder(stream, { mimeType: m }); mime = m; break; }catch(e){ recorder = null; }
+      }
+      if(!recorder){
+        try{ recorder = new MediaRecorder(stream); }catch(e){
+          exportStatus.textContent = 'MediaRecorder not supported in this browser.';
+          exportProgressWrap.style.display = 'none';
+          return;
+        }
+      }
+
+      const chunks = [];
+      recorder.ondataavailable = e => { if(e.data && e.data.size) chunks.push(e.data); };
+      recorder.onerror = e => { console.error('Recorder error', e); };
+      recorder.onstart = ()=> { exportStatus.textContent = 'Recording...'; };
+      recorder.onstop = ()=> {
+        const blob = new Blob(chunks, { type: 'video/webm' });
+        const url = URL.createObjectURL(blob);
+        exportStatus.innerHTML = `Export complete — <a href="${url}" target="_blank">Open video</a> • <a href="${url}" download="studio-export.webm">Download</a>`;
+        // auto-download
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'studio-export.webm';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        exportProgress.style.width = '100%';
+        setTimeout(()=> exportProgressWrap.style.display = 'none', 800);
+      };
+
+      // Calculate total frames for progress tracking
+      let totalFrames = 0;
+      state.slides.forEach((s,i)=>{
+        const durMs = Math.max(100, Math.round((s.duration || state.defaultDuration) * 1000));
+        totalFrames += Math.max(1, Math.round(durMs / frameMs));
+      });
+      let renderedFrames = 0;
+
+      // start recording
+      recorder.start(1000); // timeslice optional
+      // render frames while recorder captures
+      (async ()=>{
+        for(let i=0;i<state.slides.length;i++){
+          const cur = state.slides[i];
+          const next = (i < state.slides.length-1) ? state.slides[i+1] : null;
+          const durMs = Math.max(100, Math.round((cur.duration || state.defaultDuration) * 1000));
+          const frames = Math.max(1, Math.round(durMs / frameMs));
+          for(let f=0; f<frames; f++){
+            const progress = frames<=1 ? 0 : f / (frames-1);
+            drawFrameForTransition(cur, next, progress);
+            renderedFrames++;
+            const p = Math.min(1, renderedFrames / Math.max(1, totalFrames));
+            exportProgress.style.width = Math.round(p*100) + '%';
+            await wait(frameMs);
+          }
+        }
+        // small buffer to ensure recorder gets last frames
+        await wait(200);
+        recorder.stop();
+      })().catch(err=>{
+        console.error(err);
+        exportStatus.textContent = 'Export failed: '+err.message;
+        exportProgressWrap.style.display = 'none';
+        try{ recorder && recorder.state !== 'inactive' && recorder.stop(); }catch(e){}
+      });
+    });
+
+    // ---- Utilities ----
+    function updateCanvasSizeAndLetterbox(){
+      if(!state.slides.length){
+        // default
+        previewCanvas.width = 960; previewCanvas.height = 540;
+        canvasRes.textContent = '960×540';
+        ctx.fillStyle = '#000'; ctx.fillRect(0,0,previewCanvas.width,previewCanvas.height);
+        return;
+      }
+      let maxW = 0, maxH = 0;
+      state.slides.forEach(s => { if(s.w && s.h){ maxW = Math.max(maxW, s.w); maxH = Math.max(maxH, s.h); } });
+      // safety cap
+      const capW = 3840, capH = 2160;
+      maxW = Math.min(Math.max(1,maxW), capW);
+      maxH = Math.min(Math.max(1,maxH), capH);
+
+      previewCanvas.width = maxW; previewCanvas.height = maxH;
+      canvasRes.textContent = `${maxW}×${maxH}`;
+      // letterbox background
+      ctx.fillStyle = '#000'; ctx.fillRect(0,0,previewCanvas.width,previewCanvas.height);
+      // draw a neutral frame border
+      ctx.strokeStyle = 'rgba(255,255,255,0.02)';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(0.5,0.5,previewCanvas.width-1, previewCanvas.height-1);
+      // draw placeholder if slides exist
+      if(state.slides[0]) drawImageAtNativeCenter(state.slides[0].imgEl);
+    }
+
+    // initialize canvas
+    updateCanvasSizeAndLetterbox();
+
+    // expose some methods for debugging / external use
+    window.AIStudio = {
+      addFiles: files => handleFiles(files),
+      generateFromPrompt: (prompt, style) => { aiPrompt.value = prompt || ''; aiStyle.value = style || ''; genAI.click(); },
+      export: () => exportBtn.click(),
+      preview: () => previewBtn.click()
+    };
+
+    // small keyboard helpers for reordering when a thumb input focused
+    document.addEventListener('keydown', e=>{
+      if(e.altKey && (e.key === 'ArrowUp' || e.key === 'ArrowDown')){
+        // find focused thumb index
+        const focused = document.activeElement;
+        const row = focused && focused.closest && focused.closest('.thumb-row');
+        if(!row) return;
+        const idx = Array.from(thumbList.children).indexOf(row);
+        if(idx<0) return;
+        if(e.key === 'ArrowUp') moveSlide(idx, idx-1);
+        if(e.key === 'ArrowDown') moveSlide(idx, idx+1);
+      }
+    });
+
+  })();
+  </script>
+
+</body>
+</html>
